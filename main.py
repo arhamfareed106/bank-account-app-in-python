@@ -3,6 +3,8 @@ import json
 import string
 from pathlib import Path
 
+from matplotlib.pylab import rand
+
 
 
 
@@ -19,30 +21,43 @@ class Bank:
         print(f"an exception occurred: {err}")
     
     @staticmethod
-    def update(data):
+    def __update():
         with open(Bank.database, 'w') as fs:
-            fs.write(json.dumps(Bank.data,))
+            fs.write(json.dumps(Bank.data))
+            
+            
+    @classmethod
+    def __accountgenerator(cls):
+        alpha = random.choices(string.ascii_letters, k=3)
+        num = random.choices(string.digits, k=3)
+        spchar= random.choices("@!#%&", k= 1)
+        id = alpha + num + spchar
+        random.shuffle(id)
+        return "".join(id)
+    
+    
 
-    def createaccount(self):
-        data = {
+    def CreateAccount(self):
+        info = {
             "name": input("Enter your name :- "),
             "age": input("Enter your age :- "),
             "email": input("Enter your email :- "),
             "pin": input("Enter your pin :- "),
-            "accountNo": 1234,
+            "accountNo": Bank.__accountgenerator(),
             "balance": 0,
         }
-        if int(data['age']) < 18 or len(str(data['pin'])) != 4:
+        if int(info['age']) < 18 or len(str(info['pin'])) != 4:
             print("You are not eligible to create an account")
         else:
             print("Account created successfully")
-            for i in data:
-                print(f"{i} : {data[i]}")
+            for i in info:
+                print(f"{i} : {info [i]}")
             print(("please note down your account number"))
-            
-            Bank.update(data)
+            Bank.data.append(info)
 
-user = bank()
+            Bank.__update()
+
+user = Bank()
 
 print("press 1 for creating an account")
 print("press 2 Diposit money in the bank")
