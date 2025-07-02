@@ -20,7 +20,7 @@ class Bank:
     
     @staticmethod
     def update(data):
-        with open(Bank.ase, 'w') as fs:
+        with open(Bank.database, 'w') as fs:
             fs.write(json.dumps(Bank.data,))
 
     def createaccount(self):
@@ -32,7 +32,7 @@ class Bank:
             "accountNo": 1234,
             "balance": 0,
         }
-        if data['age']< 18 or len(str(data['pin'])) =! 4:
+        if int(data['age']) < 18 or len(str(data['pin'])) != 4:
             print("You are not eligible to create an account")
         else:
             print("Account created successfully")
