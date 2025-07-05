@@ -4,6 +4,8 @@ import string
 from pathlib import Path
 
 from matplotlib.pylab import rand
+from regex import B
+from stripe import Account
 
 
 
@@ -56,9 +58,27 @@ class Bank:
             Bank.data.append(info)
 
             Bank.__update()
+    
+    def depositmoney(self):
+        accnumber = input("Enter your account number: ")
+        pin = input("Enter your pin: ")
+        
+        userdata = [ i for i in Bank.data if i['accountNo'] == accnumber and i['pin'] == pin]            
 
+        if userdata == False:
+            print("sorry no data  found")
+        else:
+            amount = int(input("how much money you want to deposit: "))
+            if amount > 10000 or amount <= 0:
+                print("You can not deposit more than 10000 at a time")
+                
+            else:
+                userdata[0]["balance"] += amount
+            
+    
+    
+            
 user = Bank()
-
 print("press 1 for creating an account")
 print("press 2 Diposit money in the bank")
 print("press 3 Withdraw money from the bank")
@@ -70,3 +90,6 @@ check = int(input("Enter your choice: "))
 
 if check == 1:
     user.CreateAccount()
+    
+if check == 2:
+    user.depositmoney()
