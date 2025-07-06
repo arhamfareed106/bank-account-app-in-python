@@ -7,24 +7,21 @@ from datetime import datetime
 
 class Bank:
     database = 'data.json'
-    data = []
 
-    try:
-        if Path(database).exists():
-            with open(database, 'r') as fs:
-                data = json.load(fs)
+    def __init__(self):
+        if Path(self.database).exists():
+            try:
+                with open(self.database, 'r') as fs:
+                    self.data = json.load(fs)
+            except Exception as err:
+                print(f"An exception occurred: {err}")
+                self.data = []
         else:
             print("File not found, creating a new one.")
-    except Exception as err:
-        print(f"An exception occurred: {err}")
-
-    @staticmethod
-    def __update():
-        with open(Bank.database, 'w') as fs:
-            json.dump(Bank.data, fs, indent=4)
-
-    @classmethod
-    def __accountgenerator(cls):
+    def __update(self):
+        with open(self.database, 'w') as fs:
+            json.dump(self.data, fs, indent=4)
+    def __accountgenerator(self):
         return ''.join(random.choices(string.digits, k=6))
 
     def CreateAccount(self):
@@ -48,6 +45,7 @@ class Bank:
                 print(f"{key}: {val}")
             print("Please note down your account number.")
             self.data.append(info)
+            self.__update()
             self.__update()
 
     def __get_user(self, accnumber, pin):
@@ -90,7 +88,9 @@ class Bank:
         else:
             try:
                 amount = int(input("Enter withdrawal amount: "))
-                if userdata[0]["balance"] < amount:
+                if amount <= 0:
+                    print("Amount must be greater than 0.")
+                elif userdata[0]["balance"] < amount:
                     print("Insufficient balance.")
                 else:
                     userdata[0]["balance"] -= amount
