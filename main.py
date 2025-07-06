@@ -3,6 +3,7 @@ import json
 import string
 from pathlib import Path
 
+from matplotlib import use
 from matplotlib.pylab import rand
 from regex import B
 from stripe import Account
@@ -31,9 +32,9 @@ class Bank:
     @classmethod
     def __accountgenerator(cls):
         alpha = random.choices(string.ascii_letters, k=3)
-        num = random.choices(string.digits, k=3)
-        spchar= random.choices("@!#%&", k= 1)
-        id = alpha + num + spchar
+        num = random.choices(string.digits, k=4)
+        # spchar= random.choices("@!#%&", k= 1)
+        id =  num
         random.shuffle(id)
         return "".join(id)
     
@@ -76,11 +77,38 @@ class Bank:
                 userdata[0]["balance"] += amount
                 Bank.__update()
                 print(f"Your new balance is {userdata[0]['balance']}")
+  
+    def withdrawmoney(self):
+        accnumber = input("Enter your account number: ")
+        pin = input("Enter your pin: ")
+        
+        userdata = [ i for i in Bank.data if i['accountNo'] == accnumber and i['pin'] == pin]            
+
+        if userdata == False:
+            print("sorry no data  found")
+        else:
+            amount = int(input("how much money you want to deposit: "))
+            if userdata[0]["balance"] < amount:
+                print("You do not have sufficient balance to withdraw this amount")
                 
-            
-    
-    
-            
+            else:
+                userdata[0]["balance"] -= amount
+                Bank.__update()
+                print(f"Your new balance is {userdata[0]['balance']}")
+
+
+    def showdetails(self):
+        account = input("Enter your account number: ")
+        pin = input("Enter your pin: ")
+        userdata = [i for i in Bank.data if i['accountNo'] == account and i['pin'] == pin]
+        
+        if not userdata:
+            print("Sorry, no data found")
+        else:
+            for key in userdata[0]:
+                print(f" {key} : {userdata[0][key]}")
+        
+
 user = Bank()
 print("press 1 for creating an account")
 print("press 2 Diposit money in the bank")
@@ -96,3 +124,10 @@ if check == 1:
     
 if check == 2:
     user.depositmoney()
+    
+if check == 3:
+    user.withdrawmoney()
+    
+    
+if check == 4:
+    user.showdetails()
