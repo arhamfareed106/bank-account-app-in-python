@@ -74,6 +74,9 @@ class Bank:
                 
             else:
                 userdata[0]["balance"] += amount
+                Bank.__update()
+                print(f"Your new balance is {userdata[0]['balance']}")
+                
             
     
     
