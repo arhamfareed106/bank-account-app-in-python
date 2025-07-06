@@ -1,1 +1,170 @@
-[{"name": "arham", "age": "22", "email": "ali@example.com", "pin": "1122", "accountNo": 1234, "balance": 0}, {"name": "ali", "age": "34", "email": "asad@gmail.com", "pin": "3344", "accountNo": "!T2H11q", "balance": 2800}, {"name": "ahmad", "age": "33", "email": "ahmad@gmail.com", "pin": "1122", "accountNo": "00GF7z", "balance": 0}, {"name": "ali", "age": "32", "email": "ali@gmail.com", "pin": "1122", "accountNo": "BOV", "balance": 0}, {"name": "azhan", "age": "33", "email": "azhan@gmail.com", "pin": "1122", "accountNo": "143", "balance": 0}, {"name": "azhan", "age": "22", "email": "azhan2@gmail.com", "pin": "1122", "accountNo": "3957", "balance": 0}]
+[
+  {
+    "name": "arham",
+    "age": "22",
+    "email": "arham@gmail.com",
+    "pin": "1122",
+    "accountNo": "622135",
+    "balance": 0
+  },
+  {
+    "name": "ayesha",
+    "age": "25",
+    "email": "ayesha@example.com",
+    "pin": "2233",
+    "accountNo": "135790",
+    "balance": 5000
+  },
+  {
+    "name": "bilal",
+    "age": "30",
+    "email": "bilal.khan@example.com",
+    "pin": "3344",
+    "accountNo": "789012",
+    "balance": 7500
+  },
+  {
+    "name": "sana",
+    "age": "27",
+    "email": "sana123@gmail.com",
+    "pin": "4455",
+    "accountNo": "456321",
+    "balance": 10000
+  },
+  {
+    "name": "usman",
+    "age": "29",
+    "email": "usman@gmail.com",
+    "pin": "5566",
+    "accountNo": "998877",
+    "balance": 2500
+  },
+  {
+    "name": "hassan",
+    "age": "33",
+    "email": "hassan@example.com",
+    "pin": "6677",
+    "accountNo": "334455",
+    "balance": 3200
+  },
+  {
+    "name": "fatima",
+    "age": "24",
+    "email": "fatima@example.com",
+    "pin": "7788",
+    "accountNo": "221100",
+    "balance": 8400
+  },
+  {
+    "name": "omer",
+    "age": "26",
+    "email": "omer@example.com",
+    "pin": "8899",
+    "accountNo": "112233",
+    "balance": 4100
+  },
+  {
+    "name": "zainab",
+    "age": "23",
+    "email": "zainab@example.com",
+    "pin": "9900",
+    "accountNo": "667788",
+    "balance": 6200
+  },
+  {
+    "name": "ahmed",
+    "age": "28",
+    "email": "ahmed@example.com",
+    "pin": "1001",
+    "accountNo": "445566",
+    "balance": 5300
+  },
+  {
+    "name": "komal",
+    "age": "21",
+    "email": "komal@example.com",
+    "pin": "1100",
+    "accountNo": "776655",
+    "balance": 3900
+  },
+  {
+    "name": "ali",
+    "age": "32",
+    "email": "ali@example.com",
+    "pin": "1200",
+    "accountNo": "334466",
+    "balance": 7200
+  },
+  {
+    "name": "nida",
+    "age": "22",
+    "email": "nida@example.com",
+    "pin": "1300",
+    "accountNo": "998866",
+    "balance": 2700
+  },
+  {
+    "name": "hamza",
+    "age": "29",
+    "email": "hamza@example.com",
+    "pin": "1400",
+    "accountNo": "112244",
+    "balance": 8300
+  },
+  {
+    "name": "amna",
+    "age": "26",
+    "email": "amna@example.com",
+    "pin": "1500",
+    "accountNo": "443322",
+    "balance": 6600
+  },
+  {
+    "name": "fahad",
+    "age": "31",
+    "email": "fahad@example.com",
+    "pin": "1600",
+    "accountNo": "221133",
+    "balance": 5100
+  },
+  {
+    "name": "rabia",
+    "age": "24",
+    "email": "rabia@example.com",
+    "pin": "1700",
+    "accountNo": "776688",
+    "balance": 3000
+  },
+  {
+    "name": "atif",
+    "age": "30",
+    "email": "atif@example.com",
+    "pin": "1800",
+    "accountNo": "334477",
+    "balance": 9200
+  },
+  {
+    "name": "aiza",
+    "age": "22",
+    "email": "aiza@example.com",
+    "pin": "1900",
+    "accountNo": "665544",
+    "balance": 4900
+  },
+  {
+    "name": "tariq",
+    "age": "35",
+    "email": "tariq@example.com",
+    "pin": "2000",
+    "accountNo": "554433",
+    "balance": 8700
+  },
+  {
+    "name": "sadia",
+    "age": "28",
+    "email": "sadia@example.com",
+    "pin": "2100",
+    "accountNo": "110099",
+    "balance": 7100
+  }
+]
